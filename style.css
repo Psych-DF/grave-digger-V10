@@ -328,3 +328,35 @@ background-color: lime;
   border-radius: 4px;
 }
 
+/* RAIN */
+
+#rain {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.pixel-drop {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #00ff00; /* pixel green rain */
+  image-rendering: pixelated;
+  animation: pixelFall linear infinite;
+}
+
+@keyframes pixelFall {
+  0% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0.2;
+  }
+}
