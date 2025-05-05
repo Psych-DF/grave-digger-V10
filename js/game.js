@@ -184,3 +184,22 @@ for (let i = 0; i < numDrops; i++) {
   rainContainer.appendChild(drop);
   }
 }
+
+export function collectMinedTile(tile) {
+  if (!tile.classList.contains("mined")) return;
+
+  const type = tile.dataset.type;
+  const slotIndex = player.inventory.findIndex(item => item === null);
+
+  if (slotIndex !== -1) {
+    // Add item to inventory
+    player.inventory[slotIndex] = type;
+
+    // Clear tile visually and logically
+    tile.classList.remove("mined");
+    tile.classList.add("empty");
+    tile.dataset.type = "empty";
+
+    updateInventoryUI();
+  }
+}
