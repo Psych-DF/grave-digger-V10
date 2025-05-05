@@ -185,6 +185,8 @@ for (let i = 0; i < numDrops; i++) {
   }
 }
 
+/* collect mined object */
+
 export function collectMinedTile(tile) {
   if (!tile.classList.contains("mined")) return;
 
