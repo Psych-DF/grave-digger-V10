@@ -168,13 +168,22 @@ document.addEventListener("keydown", (e) => {
 
 function createPixelRain() {
   const rainContainer = document.getElementById("rain");
-  for (let i = 0; i < 100; i++) {
+  if (!rainContainer) return;
+
+  const numDrops = 100; // adjust for more or less rain
+
+  for (let i = 0; i < numDrops; i++) {
     const drop = document.createElement("div");
-    drop.className = "pixel-drop";
-    drop.style.left = `${Math.floor(Math.random() * window.innerWidth)}px`;
-    drop.style.top = `${-Math.floor(Math.random() * 100)}px`;
-    drop.style.animationDuration = `${0.3 + Math.random() * 1}s`;
-    drop.style.animationDelay = `${Math.random() * 2}s`;
+    drop.classList.add("pixel-drop");
+
+    // random horizontal start position
+    drop.style.left = Math.random() * 100 + "vw";
+
+    // random animation delay and duration
+    drop.style.animationDelay = Math.random() * 5 + "s";
+    drop.style.animationDuration = 1 + Math.random() * 2 + "s";
+
     rainContainer.appendChild(drop);
   }
 }
+
