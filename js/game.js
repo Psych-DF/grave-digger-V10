@@ -172,17 +172,15 @@ function createPixelRain() {
 
   const numDrops = 100; // adjust for more or less rain
 
-  for (let i = 0; i < numDrops; i++) {
-    const drop = document.createElement("div");
-    drop.classList.add("pixel-drop");
+for (let i = 0; i < numDrops; i++) {
+  const drop = document.createElement("div");
+  drop.classList.add("pixel-drop");
 
-    // random horizontal start position
-    drop.style.left = Math.random() * 100 + "vw";
+  drop.style.left = Math.random() * 100 + "vw";
+  drop.style.top = "-10px"; // ✅ critical line
+  drop.style.animationDelay = Math.random() * 5 + "s";
+  drop.style.animationDuration = 1 + Math.random() * 2 + "s";
 
-    // random animation delay and duration
-    drop.style.animationDelay = Math.random() * 5 + "s";
-    drop.style.animationDuration = 1 + Math.random() * 2 + "s";
-
-    rainContainer.appendChild(drop);
+  rainContainer.appendChild(drop);
   }
 }
