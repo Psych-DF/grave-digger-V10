@@ -184,6 +184,8 @@ function createPixelRain() {
     drop.style.animationDuration = 1 + Math.random() * 2 + "s";
 
     rainContainer.appendChild(drop);
+
+    console.log("Creating pixel rain");
   }
 }
 
