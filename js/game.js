@@ -205,3 +205,9 @@ export function collectMinedTile(tile) {
     updateInventoryUI();
   }
 }
+document.addEventListener("keydown", (e) => {
+  if (e.key === "e") {
+    const tile = getTile(player.x, player.y);
+    if (tile) collectpMinedTile(tile);
+  }
+});
