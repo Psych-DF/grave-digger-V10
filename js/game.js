@@ -10,6 +10,7 @@ export function initGame() {
 
   gameContainer.innerHTML = "";
   createGrid(gameContainer);
+  createPixelRain();
 
   oreDisplay.textContent = player.ore;
   updatePlayerPosition();
@@ -162,3 +163,18 @@ document.addEventListener("keydown", (e) => {
     }
   }
 });
+
+/* RAIN FUNCTION */
+
+function createPixelRain() {
+  const rainContainer = document.getElementById("rain");
+  for (let i = 0; i < 100; i++) {
+    const drop = document.createElement("div");
+    drop.className = "pixel-drop";
+    drop.style.left = `${Math.floor(Math.random() * window.innerWidth)}px`;
+    drop.style.top = `${-Math.floor(Math.random() * 100)}px`;
+    drop.style.animationDuration = `${0.3 + Math.random() * 1}s`;
+    drop.style.animationDelay = `${Math.random() * 2}s`;
+    rainContainer.appendChild(drop);
+  }
+}
