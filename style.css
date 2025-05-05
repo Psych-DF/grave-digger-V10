@@ -354,3 +354,12 @@ background-color: lime;
   z-index: 10002; /* Make sure it's above #game, but below HUD if needed */
 }
 
+.pixel-drop {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: red !important; /* make it obvious */
+  image-rendering: pixelated;
+  z-index: 99999;
+  animation: pixelFall linear infinite;
+}
