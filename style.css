@@ -335,7 +335,7 @@ background-color: lime;
   transform: translateX(-50%);
   display: flex;
   gap: 12px;
-  z-index: 1000;
+  z-index: 10001;
 }
 
 .slot {
