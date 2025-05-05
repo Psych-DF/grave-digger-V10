@@ -19,5 +19,7 @@ export const player = {
   bone: 0,
   dirt: 0,
   rock: 0,
+/* INVENTORY */
+ inventory: [null, null, null, null], // 4 slots, empty initially
 };
 
