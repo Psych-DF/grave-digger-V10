@@ -345,7 +345,6 @@ background-color: lime;
 }
 
 #rain {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -355,7 +354,6 @@ background-color: lime;
 }
 
 .pixel-drop {
-  position: fixed;
   width: 6px;
   height: 6px;
   background: red !important; /* make it obvious */
