@@ -187,6 +187,13 @@ for (let i = 0; i < numDrops; i++) {
 
 /* collect mined object */
 
+document.addEventListener("keydown", (e) => {
+  if (e.key.toLowerCase() === "e") {
+    const tile = getTile(player.x, player.y);
+    if (tile) collectMinedTile(tile);
+  }
+});
+
 export function collectMinedTile(tile) {
   if (!tile.classList.contains("mined")) return;
 
